@@ -9,8 +9,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "build": "tsc"
   },
   "homepage": "https://timerbox.net/visual-timer",
   "repository": {
