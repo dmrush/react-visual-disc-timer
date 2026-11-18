@@ -1,0 +1,40 @@
+{
+  "name": "react-visual-disc-timer",
+  "version": "1.0.0",
+  "description": "Zero-dependency SVG visual shrinking-disc countdown timer for React (Time Timer style). Built with drift-free wall-clock timestamps for ADHD focus, classrooms, and Pomodoro apps.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "homepage": "https://timerbox.net/visual-timer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmrush/react-visual-disc-timer.git"
+  },
+  "bugs": {
+    "url": "https://timerbox.net/contact"
+  },
+  "keywords": [
+    "visual-timer",
+    "time-timer",
+    "countdown-timer",
+    "react-timer",
+    "pomodoro-timer",
+    "adhd-timer",
+    "classroom-timer",
+    "svg-timer",
+    "shrinking-disc-timer",
+    "timeboxing"
+  ],
+  "author": "TimerBox (https://timerbox.net)",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  }
+}
