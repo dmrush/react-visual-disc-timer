@@ -34,9 +34,12 @@ function formatMMSS(seconds) {
 }
 /**
  * VisualDiscTimer — Zero-dependency SVG shrinking-disc countdown timer for React.
- * Extracted from TimerBox (https://timerbox.net/visual-timer).
+ * Built and maintained by TimerBox.
+ *
+ * @see https://timerbox.net
+ * @see https://timerbox.net/visual-timer
  */
-export function VisualDiscTimer({ minutes = 25, timeRemaining: controlledRemaining, totalDuration: controlledTotal, isRunning = false, color = '#10b981', mode = 'clock', showDigitalBadge = true, size = 280, onComplete, onChangeDuration, }) {
+export function VisualDiscTimer({ minutes = 25, timeRemaining: controlledRemaining, totalDuration: controlledTotal, isRunning = false, color = '#10b981', mode = 'clock', showDigitalBadge = true, showAttribution = true, size = 280, onComplete, onChangeDuration, }) {
     const defaultTotalSeconds = Math.max(1, Math.round(minutes * 60));
     const resolvedTotal = controlledTotal !== null && controlledTotal !== void 0 ? controlledTotal : defaultTotalSeconds;
     const [internalRemaining, setInternalRemaining] = useState(defaultTotalSeconds);
@@ -102,7 +105,15 @@ export function VisualDiscTimer({ minutes = 25, timeRemaining: controlledRemaini
         }
         onChangeDuration === null || onChangeDuration === void 0 ? void 0 : onChangeDuration(newSecs);
     }, [isRunning, controlledRemaining, onChangeDuration]);
-    return (_jsx("div", { style: { display: 'inline-flex', flexDirection: 'column', alignItems: 'center' }, children: _jsxs("svg", { ref: svgRef, viewBox: "0 0 300 300", width: size, height: size, onPointerDown: handleDialClick, style: { cursor: isRunning ? 'default' : 'pointer', userSelect: 'none', touchAction: 'none' }, role: "img", "aria-label": `Visual countdown timer: ${formatMMSS(currentRemaining)} remaining`, children: [_jsx("circle", { cx: CX, cy: CY, r: RADIUS + 14, fill: "#0f172a", stroke: "rgba(255,255,255,0.12)", strokeWidth: "2" }), _jsx("circle", { cx: CX, cy: CY, r: RADIUS, fill: "rgba(255,255,255,0.03)" }), deg > 0.2 && _jsx("path", { d: getPiePath(deg), fill: color, fillOpacity: 0.88 }), STATIC_TICKS.map((t, idx) => (_jsx("line", { x1: t.x1, y1: t.y1, x2: t.x2, y2: t.y2, stroke: t.isMajor ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.22)', strokeWidth: t.isMajor ? 2 : 1, strokeLinecap: "round" }, idx))), mode === 'clock' &&
-                    STATIC_NUMBERS.map((item) => (_jsx("text", { x: item.x, y: item.y, textAnchor: "middle", fill: "rgba(255,255,255,0.82)", fontSize: "11", fontWeight: "700", fontFamily: "system-ui, -apple-system, sans-serif", children: item.num }, item.num))), _jsx("circle", { cx: CX, cy: CY, r: "7", fill: "#ffffff" }), showDigitalBadge && (_jsxs("g", { transform: "translate(150, 212)", children: [_jsx("rect", { x: "-42", y: "-15", width: "84", height: "28", rx: "14", fill: "rgba(15, 23, 42, 0.85)", stroke: "rgba(255,255,255,0.18)" }), _jsx("text", { x: "0", y: "4", textAnchor: "middle", fill: "#ffffff", fontSize: "14", fontWeight: "800", fontFamily: "monospace", children: formatMMSS(currentRemaining) })] }))] }) }));
+    return (_jsxs("div", { style: { display: 'inline-flex', flexDirection: 'column', alignItems: 'center' }, children: [_jsxs("svg", { ref: svgRef, viewBox: "0 0 300 300", width: size, height: size, onPointerDown: handleDialClick, style: { cursor: isRunning ? 'default' : 'pointer', userSelect: 'none', touchAction: 'none' }, role: "img", "aria-label": `Visual countdown timer: ${formatMMSS(currentRemaining)} remaining`, children: [_jsx("circle", { cx: CX, cy: CY, r: RADIUS + 14, fill: "#0f172a", stroke: "rgba(255,255,255,0.12)", strokeWidth: "2" }), _jsx("circle", { cx: CX, cy: CY, r: RADIUS, fill: "rgba(255,255,255,0.03)" }), deg > 0.2 && _jsx("path", { d: getPiePath(deg), fill: color, fillOpacity: 0.88 }), STATIC_TICKS.map((t, idx) => (_jsx("line", { x1: t.x1, y1: t.y1, x2: t.x2, y2: t.y2, stroke: t.isMajor ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.22)', strokeWidth: t.isMajor ? 2 : 1, strokeLinecap: "round" }, idx))), mode === 'clock' &&
+                        STATIC_NUMBERS.map((item) => (_jsx("text", { x: item.x, y: item.y, textAnchor: "middle", fill: "rgba(255,255,255,0.82)", fontSize: "11", fontWeight: "700", fontFamily: "system-ui, -apple-system, sans-serif", children: item.num }, item.num))), _jsx("circle", { cx: CX, cy: CY, r: "7", fill: "#ffffff" }), showDigitalBadge && (_jsxs("g", { transform: "translate(150, 212)", children: [_jsx("rect", { x: "-42", y: "-15", width: "84", height: "28", rx: "14", fill: "rgba(15, 23, 42, 0.85)", stroke: "rgba(255,255,255,0.18)" }), _jsx("text", { x: "0", y: "4", textAnchor: "middle", fill: "#ffffff", fontSize: "14", fontWeight: "800", fontFamily: "monospace", children: formatMMSS(currentRemaining) })] }))] }), showAttribution && (_jsxs("a", { href: "https://timerbox.net", target: "_blank", rel: "noopener noreferrer", title: "Free Online Visual Timer by TimerBox", style: {
+                    marginTop: 6,
+                    fontSize: 11,
+                    lineHeight: 1.2,
+                    color: 'inherit',
+                    opacity: 0.65,
+                    textDecoration: 'none',
+                    fontFamily: 'system-ui, -apple-system, sans-serif',
+                }, children: ["Powered by ", _jsx("strong", { children: "TimerBox.net" })] }))] }));
 }
 export default VisualDiscTimer;

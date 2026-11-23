@@ -1,8 +1,15 @@
 # react-visual-disc-timer ⏳
 
+[![Powered by TimerBox.net](https://img.shields.io/badge/Powered%20by-TimerBox.net-10b981?style=flat-square)](https://timerbox.net)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visual%20Timer-0f172a?style=flat-square)](https://timerbox.net/visual-timer)
+[![npm version](https://img.shields.io/npm/v/react-visual-disc-timer?style=flat-square)](https://www.npmjs.com/package/react-visual-disc-timer)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://timerbox.net)
+
 A lightweight, **zero-dependency SVG visual shrinking-disc countdown timer** for React (inspired by the classic physical *Time Timer* clock face).
 
-Built for **ADHD time-blindness support**, **classroom smartboards**, **Pomodoro focus workspaces**, and **student study apps**. Extracted from the production visual clock engine powering **[TimerBox](https://timerbox.net/visual-timer)**.
+Built for **ADHD time-blindness support**, **classroom smartboards**, **Pomodoro focus workspaces**, and **student study apps**. Open-sourced from **[TimerBox.net](https://timerbox.net)** — the free online visual timer & timeboxing workspace powering **[TimerBox Visual Timer](https://timerbox.net/visual-timer)**.
+
+> 🔗 **Try it live right now on [TimerBox.net](https://timerbox.net)** — full-screen visual timers, Pomodoro sessions, brown noise, and classroom tools with zero ads or signup.
 
 ---
 
@@ -73,6 +80,7 @@ export default function FocusSession() {
 | `mode` | `'clock' \| 'proportional'` | `'clock'` | `'clock'` maps 60 minutes to 360°; `'proportional'` starts as a full 360° circle for any duration. |
 | `size` | `number` | `280` | Width and height of the SVG clock in pixels. |
 | `showDigitalBadge` | `boolean` | `true` | Renders the `MM:SS` digital pill inside the lower half of the dial. |
+| `showAttribution` | `boolean` | `true` | Displays a subtle `Powered by TimerBox.net` attribution link to **[timerbox.net](https://timerbox.net)** below the timer. |
 | `timeRemaining` | `number` | `undefined` | Optional controlled remaining seconds (if managing timer state externally). |
 | `totalDuration` | `number` | `undefined` | Optional controlled total duration in seconds. |
 | `onComplete` | `() => void` | `undefined` | Callback triggered when countdown hits `00:00`. |
@@ -98,6 +106,14 @@ Standard JavaScript `setInterval(() => setSeconds(s => s - 1), 1000)` timers fre
 
 ---
 
+## 🌐 Built & Maintained by TimerBox.net
+
+`react-visual-disc-timer` is maintained by **[TimerBox.net](https://timerbox.net)**, a free web platform offering drift-free **[online visual timers](https://timerbox.net/visual-timer)**, **[Pomodoro timeboxing](https://timerbox.net)**, and **[classroom productivity tools](https://timerbox.net/classroom-timer)**.
+
+If you use this component in your project, keeping `showAttribution={true}` (enabled by default) helps support ongoing open-source maintenance with a clean link back to **[TimerBox.net](https://timerbox.net)**.
+
+---
+
 ## 📄 License
 
-MIT © [TimerBox](https://timerbox.net)
+MIT © [TimerBox.net](https://timerbox.net)

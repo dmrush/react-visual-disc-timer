@@ -13,6 +13,8 @@ export interface VisualDiscTimerProps {
     mode?: 'clock' | 'proportional';
     /** Show digital MM:SS pill inside the clock face */
     showDigitalBadge?: boolean;
+    /** Show subtle "Powered by TimerBox.net" attribution link below the timer (default: true) */
+    showAttribution?: boolean;
     /** Size in pixels (default: 280) */
     size?: number;
     /** Callback fired when countdown reaches 00:00 */
@@ -22,7 +24,10 @@ export interface VisualDiscTimerProps {
 }
 /**
  * VisualDiscTimer — Zero-dependency SVG shrinking-disc countdown timer for React.
- * Extracted from TimerBox (https://timerbox.net/visual-timer).
+ * Built and maintained by TimerBox.
+ *
+ * @see https://timerbox.net
+ * @see https://timerbox.net/visual-timer
  */
-export declare function VisualDiscTimer({ minutes, timeRemaining: controlledRemaining, totalDuration: controlledTotal, isRunning, color, mode, showDigitalBadge, size, onComplete, onChangeDuration, }: VisualDiscTimerProps): import("react/jsx-runtime").JSX.Element;
+export declare function VisualDiscTimer({ minutes, timeRemaining: controlledRemaining, totalDuration: controlledTotal, isRunning, color, mode, showDigitalBadge, showAttribution, size, onComplete, onChangeDuration, }: VisualDiscTimerProps): import("react/jsx-runtime").JSX.Element;
 export default VisualDiscTimer;

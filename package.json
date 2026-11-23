@@ -6,12 +6,13 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc"
   },
-  "homepage": "https://timerbox.net/visual-timer",
+  "homepage": "https://timerbox.net",
   "repository": {
     "type": "git",
     "url": "https://github.com/dmrush/react-visual-disc-timer.git"
@@ -19,10 +20,17 @@
   "bugs": {
     "url": "https://timerbox.net/contact"
   },
+  "funding": {
+    "type": "website",
+    "url": "https://timerbox.net"
+  },
   "keywords": [
+    "timerbox",
     "visual-timer",
     "time-timer",
     "countdown-timer",
+    "online-timer",
+    "focus-timer",
     "react-timer",
     "pomodoro-timer",
     "adhd-timer",
@@ -31,7 +39,10 @@
     "shrinking-disc-timer",
     "timeboxing"
   ],
-  "author": "TimerBox (https://timerbox.net)",
+  "author": {
+    "name": "TimerBox",
+    "url": "https://timerbox.net"
+  },
   "license": "MIT",
   "peerDependencies": {
     "react": ">=17.0.0"
